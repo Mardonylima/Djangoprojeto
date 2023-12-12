@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body{
+            font-family: arial, helvetica, sans-serif;
+            background-image: linear-gradient(45deg, pink, black );
+      }
+      h1{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /** fonte do texto  */
+            color: white;
+            filter: drop-shadow(2px 2px 2px black);
+            background: linear-gradient(70deg, pink, black); 
+            background-clip: border-box; 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+        }
+      div{
+            background-color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top : 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            padding: 80px;
+            border-radius: 15px;
+            color: white; 
+            /** todo esse código serve pra centralizar a div, e organizar em tamanhos e cores */
+        }
+        input{
+            padding: 15px;/**largura do input */
+            border: none;/**bordas do input */
+            outline: none;/** pra tirar uma borda dos inputs*/
+            font-size: 15px;/**tamanho da fonte */
+            width: 50%;/**tamanho do input*/
+        }
+        input{
+            background-color: #1e90ff; 
+            border: none;
+            padding: 15px; 
+            width: 100%; 
+            border-radius: 10px; 
+            color:white; 
+            font-size: 15px;
+        }
+    </style>
+    <title>add_item</title>
+  </head>
+
+  <body>
+    <div>
+    <h1>Lista de nomes</h1>
+    <hr />
+
+    <form action="add_item">
+      <input type="submit" value="add item" />
+    </form>
+    <ul>
+      {% for item in itens %}
+      <li>{{item.item}}---{{item.quantidade}}--{{item.preco}}</li><hr>
+      {% endfor %}
+    </ul>
+    </div>
+  </body>
+</html>
